@@ -3,8 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { CartWidget } from './cart-widget'
-import { SearchForm } from './search-from'
+import { SearchForm } from './search-form'
 import { useMediaQuery } from '@/hooks/use-media-query'
+import { Suspense } from 'react'
 
 export default function Header() {
   const isSmallScreen = useMediaQuery('(max-width: 730px)')
@@ -17,7 +18,9 @@ export default function Header() {
           </Link>
         )}
 
-        <SearchForm />
+        <Suspense>
+          <SearchForm />
+        </Suspense>
       </div>
 
       <div className="flex items-center gap-4">
