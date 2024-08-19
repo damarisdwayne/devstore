@@ -8,8 +8,8 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
       <div className="mx-auto grid min-h-screen w-full max-w-[1600px] grid-rows-app gap-5 p-8">
         <Suspense>
           <Header />
-          {children}
         </Suspense>
+        {children}
       </div>
     </CartProvider>
   )

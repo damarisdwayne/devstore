@@ -42,8 +42,8 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
   return (
-    <div className="relative grid max-h-[860px] grid-cols-3">
-      <div className="col-span-2 overflow-hidden">
+    <div className="relative grid max-h-[860px] grid-cols-1 md:grid-cols-3">
+      <div className="md:col-span-2 overflow-hidden">
         <Image
           className="relative"
           src={product.image}
@@ -53,7 +53,7 @@ export default async function ProductPage({ params }: ProductProps) {
           quality={100}
         />
       </div>
-      <div className="flex flex-col justify-center px-12">
+      <div className="flex flex-col justify-center px-12 mt-8 md:mt-0">
         <h1 className="text-3xl font-bold leading-tight">{product.title}</h1>
 
         <p className="mt-2 leading-relaxed text-zinc-400">
